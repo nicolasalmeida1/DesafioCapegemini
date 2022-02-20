@@ -1,0 +1,38 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Anagrama {
+	
+
+	public static void main(String[] args) {
+		int count = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Por favor, insira a palavra: ");
+		String palavra = sc.next();
+		String palavraInvertida = "";
+		
+		palavraInvertida = new StringBuffer(palavra).reverse().toString();
+		
+		int z = 0;
+		int y = 0;
+		while(y < palavra.length()) {
+			for(int i = palavra.length(); i > y; i--) {
+				String c = palavra.substring(y,i);
+				while(z < palavra.length()) {
+					for(int j = palavra.length(); j > z; j--) {
+						String d = palavraInvertida.substring(z,j);
+						System.out.println(c==d);
+						if(c.intern() == d.intern()){
+							count+=1;
+						}
+					}
+					z += 1;
+				}
+			}
+			y+=1;
+		}
+		
+		System.out.println(count);	
+	}
+
+}

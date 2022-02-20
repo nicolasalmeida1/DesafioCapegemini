@@ -1,0 +1,24 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Anagrama {
+
+	public static void main(String[] args) {
+		int count = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Por favor, insira a palavra: ");
+		String palavra = sc.next();
+		
+		char[] a = palavra.toCharArray();
+		
+		for(int i = 0; i < palavra.length(); i++) {
+			for(int j = palavra.length()-1; j > i; j--) {
+				if(a[i] == a[j]) {
+					count+=1;
+				}
+			}
+		}
+		System.out.println(count);
+	}
+
+}

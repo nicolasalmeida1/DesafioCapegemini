@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Senha {
+
+	public static void main(String[] args) {
+		System.out.print("Pro favor, insira a sua senha: ");
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String senha = sc.next();
+		
+		if(senha.length() < 6) {
+			int digitosRestantes = 6 - senha.length();
+			System.out.printf("Sua senha ainda não é segura. ela possui menos de 6 dígitos, por favor, insira mais %d dígitos", digitosRestantes);
+		}
+
+	}
+
+}
